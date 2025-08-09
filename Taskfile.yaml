@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  lint:
+    desc: bufとgolangci-lintを使ってコードをリント
+    cmds:
+    - golangci-lint run
