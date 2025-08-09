@@ -5,7 +5,18 @@ Goの初学者のための学習レポジトリです。ご自由にどうぞ、
 ## やること
 
 1. `mise settings experimental=true`で`go install`を使えるようにする。
-2. `mise i`で必要ツールを取得
+2. `mise i`で必要ツールを取得し、.zshrcに以下を記載。
+    ```zsh
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
+    export GOROOT="$HOME/.local/share/mise/installs/go"
+    export PATH="$GOROOT/bin:$PATH"
+    export GOSUMDB=sum.golang.org
+
+    export PATH=$PATH:~/.local/bin
+    eval "$(mise activate zsh)"
+    export PATH="$HOME/.local/share/mise/shims:$PATH"
+    ```
 3. Goのプロジェクトを準備
     1. `go mod init ~~`で使用する環境を用意する。（以下ファイルが生成される）
         - go.mod
